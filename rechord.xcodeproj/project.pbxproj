@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BCDC151D4C2AC1F5108A707 /* Pods_rechord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE8D0A4B85F8DA590AA6C80 /* Pods_rechord.framework */; };
+		C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C20C6A41237DFFB7008D7E27 /* CQTBridge.mm */; };
+		C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */; };
+		C210A7A3237A7B000097BE9F /* ChordAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */; };
+		C261D095237C81E500123431 /* CQT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C261D094237C81E500123431 /* CQT.cpp */; };
+		C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261D096237C82C800123431 /* ConstantQTransformTap.swift */; };
 		C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */; };
 		C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F991237A50FF00C0B7F6 /* ViewController.swift */; };
 		C2A9F995237A50FF00C0B7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F993237A50FF00C0B7F6 /* Main.storyboard */; };
@@ -33,7 +39,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C2A9F9C0237A532500C0B7F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		16113EDDF519DAE5489C9DC3 /* Pods-rechord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rechord.release.xcconfig"; path = "Target Support Files/Pods-rechord/Pods-rechord.release.xcconfig"; sourceTree = "<group>"; };
+		756BC223B7CF748D41A0BAF6 /* Pods-rechord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rechord.debug.xcconfig"; path = "Target Support Files/Pods-rechord/Pods-rechord.debug.xcconfig"; sourceTree = "<group>"; };
+		9CE8D0A4B85F8DA590AA6C80 /* Pods_rechord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rechord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20C6A41237DFFB7008D7E27 /* CQTBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CQTBridge.mm; sourceTree = "<group>"; };
+		C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRangeNoteTap.swift; sourceTree = "<group>"; };
+		C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordAnalyzer.swift; sourceTree = "<group>"; };
+		C261D092237C81E400123431 /* CQTBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTBridge.h; sourceTree = "<group>"; };
+		C261D093237C81E500123431 /* CQT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CQT.hpp; sourceTree = "<group>"; };
+		C261D094237C81E500123431 /* CQT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQT.cpp; sourceTree = "<group>"; };
+		C261D096237C82C800123431 /* ConstantQTransformTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantQTransformTap.swift; sourceTree = "<group>"; };
 		C2A9F98C237A50FF00C0B7F6 /* rechord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rechord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A9F991237A50FF00C0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCDC151D4C2AC1F5108A707 /* Pods_rechord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +104,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		759FF3F2DD06BA119F86489E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				756BC223B7CF748D41A0BAF6 /* Pods-rechord.debug.xcconfig */,
+				16113EDDF519DAE5489C9DC3 /* Pods-rechord.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C261D091237C819400123431 /* CQTKit */ = {
+			isa = PBXGroup;
+			children = (
+				C261D093237C81E500123431 /* CQT.hpp */,
+				C261D094237C81E500123431 /* CQT.cpp */,
+				C261D092237C81E400123431 /* CQTBridge.h */,
+				C20C6A41237DFFB7008D7E27 /* CQTBridge.mm */,
+			);
+			path = CQTKit;
+			sourceTree = "<group>";
+		};
 		C2A9F983237A50FF00C0B7F6 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +131,8 @@
 				C2A9F9A3237A510000C0B7F6 /* rechordTests */,
 				C2A9F9AE237A510000C0B7F6 /* rechordUITests */,
 				C2A9F98D237A50FF00C0B7F6 /* Products */,
+				759FF3F2DD06BA119F86489E /* Pods */,
+				CF4A954E83675EA290E42A03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +151,10 @@
 			children = (
 				C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */,
 				C2A9F991237A50FF00C0B7F6 /* ViewController.swift */,
+				C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */,
+				C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */,
+				C261D096237C82C800123431 /* ConstantQTransformTap.swift */,
+				C261D091237C819400123431 /* CQTKit */,
 				C2A9F993237A50FF00C0B7F6 /* Main.storyboard */,
 				C2A9F996237A510000C0B7F6 /* Assets.xcassets */,
 				C2A9F998237A510000C0B7F6 /* LaunchScreen.storyboard */,
@@ -125,6 +181,14 @@
 			path = rechordUITests;
 			sourceTree = "<group>";
 		};
+		CF4A954E83675EA290E42A03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CE8D0A4B85F8DA590AA6C80 /* Pods_rechord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2A9F9B4237A510000C0B7F6 /* Build configuration list for PBXNativeTarget "rechord" */;
 			buildPhases = (
+				0C5B9130EEDA29ABC162049A /* [CP] Check Pods Manifest.lock */,
 				C2A9F988237A50FF00C0B7F6 /* Sources */,
 				C2A9F989237A50FF00C0B7F6 /* Frameworks */,
 				C2A9F98A237A50FF00C0B7F6 /* Resources */,
+				C2A9F9C0237A532500C0B7F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +259,7 @@
 				TargetAttributes = {
 					C2A9F98B237A50FF00C0B7F6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1120;
 					};
 					C2A9F99F237A510000C0B7F6 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -251,13 +318,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C5B9130EEDA29ABC162049A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rechord-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C2A9F988237A50FF00C0B7F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */,
+				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
+				C261D095237C81E500123431 /* CQT.cpp in Sources */,
+				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
+				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,
 				C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */,
+				C210A7A3237A7B000097BE9F /* ChordAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,10 +527,16 @@
 		};
 		C2A9F9B5237A510000C0B7F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 756BC223B7CF748D41A0BAF6 /* Pods-rechord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D9WEB32TK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = rechord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,6 +544,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = rechord/CQTKit/CQTBridge.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,10 +553,16 @@
 		};
 		C2A9F9B6237A510000C0B7F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16113EDDF519DAE5489C9DC3 /* Pods-rechord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D9WEB32TK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = rechord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,6 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = rechord/CQTKit/CQTBridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
