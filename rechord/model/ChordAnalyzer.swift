@@ -16,24 +16,23 @@ class ChordAnalyzer {
     var oscillators = [AKOscillator]()
     var keyboardRangeNoteTap: KeyboardRangeNoteTap
     
-    init() {
+    init(onChordChanged: @escaping (Chord) -> Void) {
         self.chord = AKMixer()
-        for i in [51, 55, 58, 60] {
+        for i in [51, 55, 58] {
             let oscillator = ChordAnalyzer.getOscillator(for: i)
             self.oscillators.append(oscillator)
             self.chord.connect(input: oscillator)
         }
+        
+        var previousChord: Chord?
                 
         self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.chord) { (normalizedScaleDegreePowers) in
-            var importantScaleDegrees = [Int]()
-
-            for (i, normalizedPower) in normalizedScaleDegreePowers.enumerated() {
-                if normalizedPower > 0.5 {
-                    importantScaleDegrees.append(i)
-                }
+            let guesser = ChordGuesser(normalizedScaleDegreePowers)
+            let chord = guesser.guessChord()
+            if previousChord == nil || previousChord! != chord {
+                previousChord = chord
+                onChordChanged(chord)
             }
-            print(importantScaleDegrees)
-            print(normalizedScaleDegreePowers)
         }
         
         let silence = AKBooster(self.chord, gain: 0)
@@ -47,7 +46,7 @@ class ChordAnalyzer {
         return oscillator
     }
     
-    func start(onChordChanged: (String) -> ()) {
+    func start() {
         do {
             try AudioKit.start()
         } catch {

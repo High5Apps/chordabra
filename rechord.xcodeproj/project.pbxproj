@@ -20,6 +20,11 @@
 		C2A9F99A237A510000C0B7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F998237A510000C0B7F6 /* LaunchScreen.storyboard */; };
 		C2A9F9A5237A510000C0B7F6 /* rechordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9A4237A510000C0B7F6 /* rechordTests.swift */; };
 		C2A9F9B0237A510000C0B7F6 /* rechordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */; };
+		C2E3DFA223832FA700619F40 /* MajorChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA123832FA700619F40 /* MajorChord.swift */; };
+		C2E3DFA42383335C00619F40 /* MinorChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA32383335C00619F40 /* MinorChord.swift */; };
+		C2E3DFA62383344000619F40 /* PowerChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA52383344000619F40 /* PowerChord.swift */; };
+		C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA8238334C500619F40 /* ChordGuesser.swift */; };
+		C2E3DFAB23833C6000619F40 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFAA23833C6000619F40 /* Chord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,11 @@
 		C2A9F9AB237A510000C0B7F6 /* rechordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rechordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rechordUITests.swift; sourceTree = "<group>"; };
 		C2A9F9B1237A510000C0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2E3DFA123832FA700619F40 /* MajorChord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorChord.swift; sourceTree = "<group>"; };
+		C2E3DFA32383335C00619F40 /* MinorChord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorChord.swift; sourceTree = "<group>"; };
+		C2E3DFA52383344000619F40 /* PowerChord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerChord.swift; sourceTree = "<group>"; };
+		C2E3DFA8238334C500619F40 /* ChordGuesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordGuesser.swift; sourceTree = "<group>"; };
+		C2E3DFAA23833C6000619F40 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +161,7 @@
 			children = (
 				C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */,
 				C2A9F991237A50FF00C0B7F6 /* ViewController.swift */,
-				C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */,
-				C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */,
-				C261D096237C82C800123431 /* ConstantQTransformTap.swift */,
-				C261D091237C819400123431 /* CQTKit */,
+				C2E3DF9C23832BA300619F40 /* model */,
 				C2A9F993237A50FF00C0B7F6 /* Main.storyboard */,
 				C2A9F996237A510000C0B7F6 /* Assets.xcassets */,
 				C2A9F998237A510000C0B7F6 /* LaunchScreen.storyboard */,
@@ -179,6 +186,46 @@
 				C2A9F9B1237A510000C0B7F6 /* Info.plist */,
 			);
 			path = rechordUITests;
+			sourceTree = "<group>";
+		};
+		C2E3DF9C23832BA300619F40 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */,
+				C2E3DF9E23832C3A00619F40 /* chord-guessing */,
+				C2E3DF9D23832C0800619F40 /* note-detection */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C2E3DF9D23832C0800619F40 /* note-detection */ = {
+			isa = PBXGroup;
+			children = (
+				C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */,
+				C261D096237C82C800123431 /* ConstantQTransformTap.swift */,
+				C261D091237C819400123431 /* CQTKit */,
+			);
+			path = "note-detection";
+			sourceTree = "<group>";
+		};
+		C2E3DF9E23832C3A00619F40 /* chord-guessing */ = {
+			isa = PBXGroup;
+			children = (
+				C2E3DFA8238334C500619F40 /* ChordGuesser.swift */,
+				C2E3DFA72383348100619F40 /* chords */,
+			);
+			path = "chord-guessing";
+			sourceTree = "<group>";
+		};
+		C2E3DFA72383348100619F40 /* chords */ = {
+			isa = PBXGroup;
+			children = (
+				C2E3DFAA23833C6000619F40 /* Chord.swift */,
+				C2E3DFA123832FA700619F40 /* MajorChord.swift */,
+				C2E3DFA32383335C00619F40 /* MinorChord.swift */,
+				C2E3DFA52383344000619F40 /* PowerChord.swift */,
+			);
+			path = chords;
 			sourceTree = "<group>";
 		};
 		CF4A954E83675EA290E42A03 /* Frameworks */ = {
@@ -350,11 +397,16 @@
 			files = (
 				C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */,
 				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
+				C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */,
 				C261D095237C81E500123431 /* CQT.cpp in Sources */,
+				C2E3DFA223832FA700619F40 /* MajorChord.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
+				C2E3DFA62383344000619F40 /* PowerChord.swift in Sources */,
+				C2E3DFA42383335C00619F40 /* MinorChord.swift in Sources */,
 				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,
 				C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */,
 				C210A7A3237A7B000097BE9F /* ChordAnalyzer.swift in Sources */,
+				C2E3DFAB23833C6000619F40 /* Chord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = rechord/CQTKit/CQTBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -570,7 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = rechord/CQTKit/CQTBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

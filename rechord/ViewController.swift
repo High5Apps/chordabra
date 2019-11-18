@@ -17,10 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.chordAnalyzer = ChordAnalyzer()
-        self.chordAnalyzer.start(onChordChanged: { (chord) in
-                print("onChordChanged: \(chord)")
+        self.chordAnalyzer = ChordAnalyzer(onChordChanged: { (chord) in
+            print("onChordChanged: \(chord.symbol)")
         })
+        self.chordAnalyzer.start()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
