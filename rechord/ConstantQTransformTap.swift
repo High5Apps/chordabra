@@ -9,43 +9,22 @@
 import Foundation
 import AudioKit
 
-protocol ConstantQTransformTapDelegate {
-    func onInputBufferAnalyzed(powers: [Float])
-}
-
 class ConstantQTransformTap: NSObject {
-    var constantQTransformTapDelegate: ConstantQTransformTapDelegate?
     
-    private var inputBufferSize: UInt32!
-    private var sampleRate: Float!
-    private var cqt: CQTBridge!
-    private var transformedSignal: [Float]!
-    
-    init(_ input: AKNode, minFrequency: Float, maxFrequency: Float, inputBufferSize: UInt32, sampleFrequency: Float = Float(AKSettings.sampleRate), bins: Int32 = 12) {
-        super.init()
+    init(_ input: AKNode, minFrequency: Float, maxFrequency: Float, inputBufferSize: UInt32, bins: Int32, sampleFrequency: Float, analysisCompletionBlock: @escaping ([Float]) -> ()) {
         
-        self.inputBufferSize = inputBufferSize
-        self.sampleRate = Float(AKSettings.sampleRate)
+        let cqt = CQTBridge(minFreq: minFrequency, maxFreq: maxFrequency, bins: bins, sampleFreq: sampleFrequency)!
+        var transformedSignal = [Float](zeros: Int(cqt.getKeyCount()))
         
-        self.cqt = CQTBridge(minFreq: minFrequency, maxFreq: maxFrequency, bins: bins, sampleFreq: self.sampleRate)
-        self.transformedSignal = [Float](zeros: Int(self.cqt.getKeyCount()))
-                
-        input.avAudioUnitOrNode.installTap(onBus: 0, bufferSize: inputBufferSize, format: AudioKit.format) { [weak self] (buffer, _) -> Void in
-            guard let strongSelf = self else {
-                AKLog("Unable to create strong reference to self")
-                return
-            }
-
-            buffer.frameLength = strongSelf.inputBufferSize
+        input.avAudioUnitOrNode.installTap(onBus: 0, bufferSize: inputBufferSize, format: AudioKit.format) { (buffer, when) -> () in
+            buffer.frameLength = inputBufferSize
             let offset = Int(buffer.frameCapacity - buffer.frameLength)
-            
-            if let tail = buffer.floatChannelData?[0], let existingCQT = strongSelf.cqt {
-                if let transformed = existingCQT.run(withTimeDomainSignal: &tail[offset], signalLength: strongSelf.inputBufferSize) {
-                    for i in 0..<existingCQT.getKeyCount() {
-                        strongSelf.transformedSignal[Int(i)] = transformed[Int(i)]
-                    }
-                    strongSelf.constantQTransformTapDelegate?.onInputBufferAnalyzed(powers: strongSelf.transformedSignal)
+
+            if let tail = buffer.floatChannelData?[0], let transformed = cqt.run(withTimeDomainSignal: &tail[offset], signalLength: inputBufferSize) {
+                for i in 0..<Int(cqt.getKeyCount()) {
+                    transformedSignal[i] = transformed[i]
                 }
+                analysisCompletionBlock(transformedSignal)
             }
         }
     }

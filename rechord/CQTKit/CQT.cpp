@@ -107,7 +107,7 @@ CQT::~CQT()
 	vDSP_destroy_fftsetup(reinterpret_cast<FFTSetup>(m_fftSetup));
 }
 
-float *CQT::forward(float *x, int length) const
+float *CQT::forward(const float *x, int length) const
 {
 	DSPSplitComplex xMatrix;
 	xMatrix.realp = m_fftLengthMatrixReal;

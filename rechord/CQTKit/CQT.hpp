@@ -25,7 +25,7 @@ public:
 	/// frequency domain.
 	///
 	/// The returned vector is of length `k()` and must be freed by the caller.
-	float *forward(float *x, int N) const;
+	float *forward(const float *x, int N) const;
 
 	inline int k() const {
 		return m_K;

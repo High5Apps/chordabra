@@ -9,7 +9,7 @@
 import Foundation
 import AudioKit
 
-class ChordAnalyzer: KeyboardRangeNoteTapDelegate {
+class ChordAnalyzer {
 
     // MARK: Properties
     var chord = AKMixer()
@@ -18,13 +18,23 @@ class ChordAnalyzer: KeyboardRangeNoteTapDelegate {
     
     init() {
         self.chord = AKMixer()
-        for i in [51, 55, 82] {
+        for i in [51, 55, 58, 60] {
             let oscillator = ChordAnalyzer.getOscillator(for: i)
             self.oscillators.append(oscillator)
             self.chord.connect(input: oscillator)
         }
-        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.chord)
-        self.keyboardRangeNoteTap.delegate = self
+                
+        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.chord) { (normalizedScaleDegreePowers) in
+            var importantScaleDegrees = [Int]()
+
+            for (i, normalizedPower) in normalizedScaleDegreePowers.enumerated() {
+                if normalizedPower > 0.5 {
+                    importantScaleDegrees.append(i)
+                }
+            }
+            print(importantScaleDegrees)
+            print(normalizedScaleDegreePowers)
+        }
         
         let silence = AKBooster(self.chord, gain: 0)
         AudioKit.output = silence
@@ -47,7 +57,6 @@ class ChordAnalyzer: KeyboardRangeNoteTapDelegate {
         for oscillator in oscillators {
             oscillator.start()
         }
-        self.chord.start()
     }
     
     func stop() {
@@ -56,9 +65,5 @@ class ChordAnalyzer: KeyboardRangeNoteTapDelegate {
         } catch {
             print("Failed to stop AudioKit")
         }
-    }
-    
-    func onKeyboardRangeNoteTapUpdated() {
-        print(self.keyboardRangeNoteTap.scaleDegreePowers)
     }
 }

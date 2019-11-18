@@ -26,7 +26,7 @@
     delete cqt;
 }
 
-- (float *)runWithTimeDomainSignal:(float *)x signalLength:(uint)n {
+- (float *)runWithTimeDomainSignal:(const float *)x signalLength:(uint)n {
     CQTKit::CQT *cqt = (CQTKit::CQT *) self.cqtdata_mem;
     return cqt->forward(x, n);
 }
