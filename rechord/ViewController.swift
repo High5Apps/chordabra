@@ -14,11 +14,15 @@ class ViewController: UIViewController {
     
     var chordAnalyzer: ChordAnalyzer!
     
+    @IBOutlet weak var chordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.chordAnalyzer = ChordAnalyzer(onChordChanged: { (chord) in
-            print("onChordChanged: \(chord.symbol)")
+            DispatchQueue.main.async {
+               self.chordLabel.text = chord.symbol
+            }
         })
         self.chordAnalyzer.start()
     }
