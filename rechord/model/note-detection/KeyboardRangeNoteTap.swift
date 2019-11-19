@@ -34,7 +34,13 @@ class KeyboardRangeNoteTap: ConstantQTransformTap {
                 }
             }
             
-            let normalizedScaleDegreePowers = scaleDegreePowers.map { $0 / maxScaleDegreePower }
+            let normalizedScaleDegreePowers: [Float]
+            if maxScaleDegreePower > 0 {
+                normalizedScaleDegreePowers = scaleDegreePowers.map { $0 / maxScaleDegreePower }
+            } else {
+                normalizedScaleDegreePowers = scaleDegreePowers
+            }
+            
             analysisCompletionBlock(normalizedScaleDegreePowers)
         }
     }
