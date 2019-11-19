@@ -12,21 +12,14 @@ import AudioKit
 class ChordAnalyzer {
 
     // MARK: Properties
-    var chord = AKMixer()
-    var oscillators = [AKOscillator]()
+    var mic = AKMicrophone()!
     var keyboardRangeNoteTap: KeyboardRangeNoteTap
     
     init(onChordChanged: @escaping (Chord) -> Void) {
-        self.chord = AKMixer()
-        for i in [51, 55, 58] {
-            let oscillator = ChordAnalyzer.getOscillator(for: i)
-            self.oscillators.append(oscillator)
-            self.chord.connect(input: oscillator)
-        }
-        
+        let lowPassFilter = AKLowPassButterworthFilter(self.mic, cutoffFrequency: 8200)
+
         var previousChord: Chord?
-                
-        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.chord) { (normalizedScaleDegreePowers) in
+        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(lowPassFilter) { (normalizedScaleDegreePowers) in
             let guesser = ChordGuesser(normalizedScaleDegreePowers)
             let chord = guesser.guessChord()
             if previousChord == nil || previousChord! != chord {
@@ -35,7 +28,7 @@ class ChordAnalyzer {
             }
         }
         
-        let silence = AKBooster(self.chord, gain: 0)
+        let silence = AKBooster(lowPassFilter, gain: 0)
         AudioKit.output = silence
     }
     
@@ -53,12 +46,12 @@ class ChordAnalyzer {
             print("Failed to start AudioKit")
         }
         
-        for oscillator in oscillators {
-            oscillator.start()
-        }
+        self.mic.start()
     }
     
     func stop() {
+        self.mic.stop()
+        
         do {
             try AudioKit.stop()
         } catch {

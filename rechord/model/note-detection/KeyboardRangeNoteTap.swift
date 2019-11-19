@@ -17,7 +17,7 @@ class KeyboardRangeNoteTap: ConstantQTransformTap {
         let qualityMultiplier = 2 // Two frequency components per semitone as recommended by this paper:  http://academics.wellesley.edu/Physics/brown/pubs/cq1stPaper.pdf
         let binCount = Int32(qualityMultiplier * notesPerOctave)
         let bufferSize: UInt32 = 4096
-        let sampleFrequency = Float(44100)
+        let sampleFrequency = Float(AKSettings.sampleRate)
         
         let minFrequency = Float(KeyboardRangeNoteTap.getKeyboardNoteFrequencyWithIndex(i: 0))
         let maxFrequency = Float(KeyboardRangeNoteTap.getKeyboardNoteFrequencyWithIndex(i: standardKeyboardNoteCount - 1))
