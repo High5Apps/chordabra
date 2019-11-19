@@ -15,7 +15,21 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See Chord" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="OK3-yr-ba9">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OK3-yr-ba9" secondAttribute="bottom" constant="10" id="ODB-sI-d1M"/>
+                            <constraint firstItem="OK3-yr-ba9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="PHM-Cx-OsJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OK3-yr-ba9" secondAttribute="trailing" constant="10" id="Xq7-V2-goy"/>
+                            <constraint firstItem="OK3-yr-ba9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jCu-f2-3Nw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
