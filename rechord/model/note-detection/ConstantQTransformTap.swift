@@ -16,7 +16,7 @@ class ConstantQTransformTap: AggregatingTap {
         let cqt = CQTBridge(minFreq: minFrequency, maxFreq: maxFrequency, bins: bins, sampleFreq: sampleFrequency)!
         var transformedSignal = [Float](zeros: Int(cqt.getKeyCount()))
         
-        super.init(input, inputBufferSize: 4096, aggregationFactor: 2) { (signal) in
+        super.init(input, inputBufferSize: Int(inputBufferSize), aggregationFactor: 2) { (signal) in
             signal.withUnsafeBufferPointer { (unsafeBufferPointer) in
                 if let transformed = cqt.run(withTimeDomainSignal: unsafeBufferPointer.baseAddress, signalLength: UInt32(signal.count)) {
                     for i in 0..<Int(cqt.getKeyCount()) {

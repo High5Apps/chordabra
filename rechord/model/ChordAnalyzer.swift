@@ -17,8 +17,8 @@ class ChordAnalyzer {
     
     init(onChordChanged: @escaping (Chord) -> Void) {
         var previousChord: Chord?
-        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (normalizedScaleDegreePowers) in
-            let guesser = ChordGuesser(normalizedScaleDegreePowers)
+        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (centeredScaleDegreeMaxs) in
+            let guesser = ChordGuesser(centeredScaleDegreeMaxs)
             let chord = guesser.guessChord()
             
             if previousChord == nil || previousChord! != chord {
@@ -29,6 +29,19 @@ class ChordAnalyzer {
         
         let silence = AKBooster(self.mic, gain: 0)
         AudioKit.output = silence
+    }
+    
+    private class func snr(wantedScaleDegrees: [Int], scaleDegreePowers: [Float]) -> Double {
+        var signal = 0.0
+        var noise = 0.0
+        for (i, power) in scaleDegreePowers.enumerated() {
+            if wantedScaleDegrees.contains(i) {
+                signal += Double(power)
+            } else {
+                noise += Double(power)
+            }
+        }
+        return signal / noise
     }
     
     func start() {
