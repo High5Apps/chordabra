@@ -14,7 +14,7 @@ class Chord: NSObject {
     
     var rootName: String {
         get {
-            return ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab"][root]
+            ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab"][root]
         }
     }
     
@@ -39,11 +39,6 @@ class Chord: NSObject {
     required init(root: Int) {
         self.root = root
         self.scaleDegrees = [Int](zeros: notesPerOctave)
-    }
-    
-    convenience init(root: Int, scaleDegrees: [Int]) {
-        self.init(root: root)
-        self.scaleDegrees = scaleDegrees
     }
     
     func getDistance(from scaleNotePowers: [Float]) -> Float {

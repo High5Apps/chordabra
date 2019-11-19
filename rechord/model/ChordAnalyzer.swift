@@ -22,6 +22,11 @@ class ChordAnalyzer {
         self.keyboardRangeNoteTap = KeyboardRangeNoteTap(lowPassFilter) { (normalizedScaleDegreePowers) in
             let guesser = ChordGuesser(normalizedScaleDegreePowers)
             let chord = guesser.guessChord()
+            
+            if chord is Silence || chord is Noise {
+                return
+            }
+            
             if previousChord == nil || previousChord! != chord {
                 previousChord = chord
                 onChordChanged(chord)

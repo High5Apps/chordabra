@@ -1,5 +1,5 @@
 //
-//  PowerChord.swift
+//  Noise.swift
 //  rechord
 //
 //  Created by Julian Tigler on 11/18/19.
@@ -8,22 +8,21 @@
 
 import Foundation
 
-class PowerChord: Chord {
-    
-    override var description : String {
-        return "PowerChord(\(rootName))"
+class Noise: Chord {
+    override var rootName: String {
+        get {
+            "N"
+        }
     }
     
     override var symbol: String {
         get {
-            "\(rootName)5"
+            "N"
         }
     }
     
     required init(root: Int) {
         super.init(root: root)
-        
-        scaleDegrees[root] = 1
-        scaleDegrees[(root + 7) % notesPerOctave] = 1
+        scaleDegrees = [Int](repeating: 1, count: 12)
     }
 }

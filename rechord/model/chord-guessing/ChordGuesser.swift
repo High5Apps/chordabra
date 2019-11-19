@@ -33,10 +33,12 @@ class ChordGuesser {
     private func getPossibleChords() -> [Chord] {
         var chords = [Chord]()
         
+        chords.append(Silence(root: -1))
+        chords.append(Noise(root: -1))
+        
         for i in 0..<12 {
             chords.append(MajorChord(root: i))
             chords.append(MinorChord(root: i))
-            chords.append(PowerChord(root: i))
         }
         
         return chords
