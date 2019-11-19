@@ -9,23 +9,23 @@
 import Foundation
 import AudioKit
 
-class ConstantQTransformTap: NSObject {
+class ConstantQTransformTap: AggregatingTap {
     
     init(_ input: AKNode, minFrequency: Float, maxFrequency: Float, inputBufferSize: UInt32, bins: Int32, sampleFrequency: Float, analysisCompletionBlock: @escaping ([Float]) -> ()) {
         
         let cqt = CQTBridge(minFreq: minFrequency, maxFreq: maxFrequency, bins: bins, sampleFreq: sampleFrequency)!
         var transformedSignal = [Float](zeros: Int(cqt.getKeyCount()))
         
-        input.avAudioUnitOrNode.installTap(onBus: 0, bufferSize: inputBufferSize, format: AudioKit.format) { (buffer, when) -> () in
-            buffer.frameLength = inputBufferSize
-            let offset = Int(buffer.frameCapacity - buffer.frameLength)
-
-            if let tail = buffer.floatChannelData?[0], let transformed = cqt.run(withTimeDomainSignal: &tail[offset], signalLength: inputBufferSize) {
-                for i in 0..<Int(cqt.getKeyCount()) {
-                    transformedSignal[i] = transformed[i]
+        super.init(input, inputBufferSize: 4096, aggregationFactor: 2) { (signal) in
+            signal.withUnsafeBufferPointer { (unsafeBufferPointer) in
+                if let transformed = cqt.run(withTimeDomainSignal: unsafeBufferPointer.baseAddress, signalLength: UInt32(signal.count)) {
+                    for i in 0..<Int(cqt.getKeyCount()) {
+                        transformedSignal[i] = transformed[i]
+                    }
+                    analysisCompletionBlock(transformedSignal)
                 }
-                analysisCompletionBlock(transformedSignal)
             }
+
         }
     }
 }
