@@ -10,7 +10,7 @@ import Foundation
 
 class Chord: NSObject {
     var root: Int
-    var scaleDegrees: [Int]
+    var scaleDegrees: [Double]
     
     var rootName: String {
         get {
@@ -38,18 +38,18 @@ class Chord: NSObject {
     
     required init(root: Int) {
         self.root = root
-        self.scaleDegrees = [Int](zeros: notesPerOctave)
+        self.scaleDegrees = [Double](zeros: notesPerOctave)
     }
     
-    func getDistance(from scaleNotePowers: [Float]) -> Float {
+    func getDistance(from scaleNotePowers: [Float]) -> Double {
         guard scaleNotePowers.count == notesPerOctave else {
             fatalError("Expected scaleNotePowers to have 12 elements")
         }
         
-        var distance: Float = 0.0
+        var distance = 0.0
         
         for i in 0..<notesPerOctave {
-            distance += abs(scaleNotePowers[i] - Float(scaleDegrees[i]))
+            distance += abs(Double(scaleNotePowers[i]) - scaleDegrees[i])
         }
  
         return distance

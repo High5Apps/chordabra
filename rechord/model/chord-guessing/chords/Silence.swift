@@ -9,6 +9,11 @@
 import Foundation
 
 class Silence: Chord {
+    
+    override var description : String {
+        return "Silence"
+    }
+    
     override var rootName: String {
         get {
             "S"
@@ -17,12 +22,12 @@ class Silence: Chord {
     
     override var symbol: String {
         get {
-            "S"
+            ""
         }
     }
     
     required init(root: Int) {
         super.init(root: root)
-        scaleDegrees = [Int](zeros: 12)
+        scaleDegrees = [Double](zeros: 12)
     }
 }

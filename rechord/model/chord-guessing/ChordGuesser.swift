@@ -16,18 +16,13 @@ class ChordGuesser {
     }
     
     func guessChord() -> Chord {
-        var minDistance = Float.infinity
-        var closestChord: Chord!
-        
-        for chord in getPossibleChords() {
-            let distance = chord.getDistance(from: scaleDegreePowers)
-            if distance < minDistance {
-                minDistance = distance
-                closestChord = chord
-            }
+        let closestChords = getPossibleChords().sorted { (a, b) -> Bool in
+            a.getDistance(from: scaleDegreePowers) < b.getDistance(from: scaleDegreePowers)
         }
         
-        return closestChord
+        print(closestChords[0..<3])
+        
+        return closestChords[0]
     }
     
     private func getPossibleChords() -> [Chord] {

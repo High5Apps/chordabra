@@ -9,6 +9,11 @@
 import Foundation
 
 class Noise: Chord {
+    
+    override var description : String {
+        return "Noise"
+    }
+    
     override var rootName: String {
         get {
             "N"
@@ -17,12 +22,12 @@ class Noise: Chord {
     
     override var symbol: String {
         get {
-            "N"
+            ""
         }
     }
     
     required init(root: Int) {
         super.init(root: root)
-        scaleDegrees = [Int](repeating: 1, count: 12)
+        scaleDegrees = [Double](repeating: 0.5, count: 12)
     }
 }
