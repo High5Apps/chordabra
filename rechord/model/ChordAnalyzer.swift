@@ -16,10 +16,11 @@ class ChordAnalyzer {
     var keyboardRangeNoteTap: KeyboardRangeNoteTap
     
     init(onChordChanged: @escaping (Chord) -> Void) {
+        let chordGuesser = ChordGuesser()
         var previousChord: Chord?
-        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (centeredScaleDegreeMaxs) in
-            let guesser = ChordGuesser(centeredScaleDegreeMaxs)
-            let chord = guesser.guessChord()
+        
+        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (chroma) in
+            let chord = chordGuesser.guessChord(chroma)
             
             if previousChord == nil || previousChord! != chord {
                 previousChord = chord
@@ -31,27 +32,14 @@ class ChordAnalyzer {
         AudioKit.output = silence
     }
     
-    private class func snr(wantedScaleDegrees: [Int], scaleDegreePowers: [Float]) -> Double {
-        var signal = 0.0
-        var noise = 0.0
-        for (i, power) in scaleDegreePowers.enumerated() {
-            if wantedScaleDegrees.contains(i) {
-                signal += Double(power)
-            } else {
-                noise += Double(power)
-            }
-        }
-        return signal / noise
-    }
-    
     func start() {
-        self.mic.start()
-
         do {
             try AudioKit.start()
         } catch {
             print("Failed to start AudioKit")
         }
+        
+        self.mic.start()
     }
     
     func stop() {

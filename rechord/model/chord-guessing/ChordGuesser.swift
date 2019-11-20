@@ -9,21 +9,7 @@
 import Foundation
 
 class ChordGuesser {
-    let scaleDegreePowers: [Float]
-    
-    init(_ scaleDegreePowers: [Float]) {
-        self.scaleDegreePowers = scaleDegreePowers
-    }
-    
-    func guessChord() -> Chord {
-        let closestChords = getPossibleChords().sorted { (a, b) -> Bool in
-            a.getDistance(from: scaleDegreePowers) < b.getDistance(from: scaleDegreePowers)
-        }
-        
-        return closestChords[0]
-    }
-    
-    private func getPossibleChords() -> [Chord] {
+    lazy var chordPossibilities: [Chord] = {
         var chords = [Chord]()
         
         for i in 0..<12 {
@@ -34,5 +20,13 @@ class ChordGuesser {
         }
         
         return chords
+    }()
+    
+    func guessChord(_ chroma: [Float]) -> Chord {
+        let closestChords = chordPossibilities.sorted { (a, b) -> Bool in
+            a.getDistance(from: chroma) < b.getDistance(from: chroma)
+        }
+        
+        return closestChords[0]
     }
 }
