@@ -22,6 +22,7 @@
 		C2A9F9A5237A510000C0B7F6 /* rechordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9A4237A510000C0B7F6 /* rechordTests.swift */; };
 		C2A9F9B0237A510000C0B7F6 /* rechordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */; };
 		C2C4FA712384C87C0076D6A1 /* DiminishedTriad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4FA702384C87C0076D6A1 /* DiminishedTriad.swift */; };
+		C2C4FA732384C9C60076D6A1 /* DominantSeventh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4FA722384C9C60076D6A1 /* DominantSeventh.swift */; };
 		C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA123832FA700619F40 /* MajorTriad.swift */; };
 		C2E3DFA42383335C00619F40 /* MinorTriad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA32383335C00619F40 /* MinorTriad.swift */; };
 		C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA8238334C500619F40 /* ChordGuesser.swift */; };
@@ -84,6 +85,7 @@
 		C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rechordUITests.swift; sourceTree = "<group>"; };
 		C2A9F9B1237A510000C0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C4FA702384C87C0076D6A1 /* DiminishedTriad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiminishedTriad.swift; sourceTree = "<group>"; };
+		C2C4FA722384C9C60076D6A1 /* DominantSeventh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantSeventh.swift; sourceTree = "<group>"; };
 		C2E3DFA123832FA700619F40 /* MajorTriad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTriad.swift; sourceTree = "<group>"; };
 		C2E3DFA32383335C00619F40 /* MinorTriad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorTriad.swift; sourceTree = "<group>"; };
 		C2E3DFA8238334C500619F40 /* ChordGuesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordGuesser.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				C2E3DFA123832FA700619F40 /* MajorTriad.swift */,
 				C2E3DFA32383335C00619F40 /* MinorTriad.swift */,
 				C2C4FA702384C87C0076D6A1 /* DiminishedTriad.swift */,
+				C2C4FA722384C9C60076D6A1 /* DominantSeventh.swift */,
 			);
 			path = chords;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				C261D095237C81E500123431 /* CQT.cpp in Sources */,
 				C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
+				C2C4FA732384C9C60076D6A1 /* DominantSeventh.swift in Sources */,
 				C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */,
 				C2E3DFA42383335C00619F40 /* MinorTriad.swift in Sources */,
 				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,

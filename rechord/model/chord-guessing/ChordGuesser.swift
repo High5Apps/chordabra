@@ -30,6 +30,7 @@ class ChordGuesser {
             chords.append(MajorTriad(root: i))
             chords.append(MinorTriad(root: i))
             chords.append(DiminishedTriad(root: i))
+            chords.append(DominantSeventh(root: i))
         }
         
         return chords
