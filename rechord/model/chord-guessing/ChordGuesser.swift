@@ -29,6 +29,7 @@ class ChordGuesser {
         for i in 0..<12 {
             chords.append(MajorTriad(root: i))
             chords.append(MinorTriad(root: i))
+            chords.append(DiminishedTriad(root: i))
         }
         
         return chords
