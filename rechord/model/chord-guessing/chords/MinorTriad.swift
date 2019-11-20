@@ -8,10 +8,10 @@
 
 import Foundation
 
-class MinorChord: Chord {
+class MinorTriad: Chord {
     
     override var description : String {
-        return "MinorChord(\(rootName))"
+        return "MinorTriad(\(rootName))"
     }
     
     override var symbol: String {

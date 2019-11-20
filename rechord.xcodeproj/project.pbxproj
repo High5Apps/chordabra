@@ -21,8 +21,8 @@
 		C2A9F99A237A510000C0B7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F998237A510000C0B7F6 /* LaunchScreen.storyboard */; };
 		C2A9F9A5237A510000C0B7F6 /* rechordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9A4237A510000C0B7F6 /* rechordTests.swift */; };
 		C2A9F9B0237A510000C0B7F6 /* rechordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */; };
-		C2E3DFA223832FA700619F40 /* MajorChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA123832FA700619F40 /* MajorChord.swift */; };
-		C2E3DFA42383335C00619F40 /* MinorChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA32383335C00619F40 /* MinorChord.swift */; };
+		C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA123832FA700619F40 /* MajorTriad.swift */; };
+		C2E3DFA42383335C00619F40 /* MinorTriad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA32383335C00619F40 /* MinorTriad.swift */; };
 		C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFA8238334C500619F40 /* ChordGuesser.swift */; };
 		C2E3DFAB23833C6000619F40 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3DFAA23833C6000619F40 /* Chord.swift */; };
 /* End PBXBuildFile section */
@@ -82,8 +82,8 @@
 		C2A9F9AB237A510000C0B7F6 /* rechordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rechordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F9AF237A510000C0B7F6 /* rechordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rechordUITests.swift; sourceTree = "<group>"; };
 		C2A9F9B1237A510000C0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E3DFA123832FA700619F40 /* MajorChord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorChord.swift; sourceTree = "<group>"; };
-		C2E3DFA32383335C00619F40 /* MinorChord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorChord.swift; sourceTree = "<group>"; };
+		C2E3DFA123832FA700619F40 /* MajorTriad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTriad.swift; sourceTree = "<group>"; };
+		C2E3DFA32383335C00619F40 /* MinorTriad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorTriad.swift; sourceTree = "<group>"; };
 		C2E3DFA8238334C500619F40 /* ChordGuesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordGuesser.swift; sourceTree = "<group>"; };
 		C2E3DFAA23833C6000619F40 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,8 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				C2E3DFAA23833C6000619F40 /* Chord.swift */,
-				C2E3DFA123832FA700619F40 /* MajorChord.swift */,
-				C2E3DFA32383335C00619F40 /* MinorChord.swift */,
+				C2E3DFA123832FA700619F40 /* MajorTriad.swift */,
+				C2E3DFA32383335C00619F40 /* MinorTriad.swift */,
 			);
 			path = chords;
 			sourceTree = "<group>";
@@ -399,10 +399,10 @@
 				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
 				C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */,
 				C261D095237C81E500123431 /* CQT.cpp in Sources */,
-				C2E3DFA223832FA700619F40 /* MajorChord.swift in Sources */,
+				C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
 				C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */,
-				C2E3DFA42383335C00619F40 /* MinorChord.swift in Sources */,
+				C2E3DFA42383335C00619F40 /* MinorTriad.swift in Sources */,
 				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,
 				C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */,
 				C210A7A3237A7B000097BE9F /* ChordAnalyzer.swift in Sources */,

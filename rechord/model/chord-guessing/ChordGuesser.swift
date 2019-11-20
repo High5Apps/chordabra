@@ -27,8 +27,8 @@ class ChordGuesser {
         var chords = [Chord]()
         
         for i in 0..<12 {
-            chords.append(MajorChord(root: i))
-            chords.append(MinorChord(root: i))
+            chords.append(MajorTriad(root: i))
+            chords.append(MinorTriad(root: i))
         }
         
         return chords
