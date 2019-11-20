@@ -10,7 +10,7 @@ import Foundation
 
 class Chord: NSObject {
     var root: Int
-    var scaleDegrees: [Double]
+    var scaleDegrees: [Int]
     
     var rootName: String {
         get {
@@ -38,20 +38,22 @@ class Chord: NSObject {
     
     required init(root: Int) {
         self.root = root
-        self.scaleDegrees = [Double](zeros: notesPerOctave)
+        self.scaleDegrees = [Int](zeros: notesPerOctave)
     }
     
-    func getDistance(from scaleNotePowers: [Float]) -> Double {
-        guard scaleNotePowers.count == notesPerOctave else {
-            fatalError("Expected scaleNotePowers to have 12 elements")
+    func getDistance(from chroma: [Float]) -> Double {
+        guard chroma.count == notesPerOctave else {
+            fatalError("Expected chroma to have 12 elements")
         }
-        
-        var distance = 0.0
+
+        var noise = 0.0
         
         for i in 0..<notesPerOctave {
-            distance += abs(Double(scaleNotePowers[i]) - scaleDegrees[i])
+            noise += (1 - Double(scaleDegrees[i])) * pow(Double(chroma[i]), 2)
         }
- 
-        return distance
+        
+        noise = sqrt(noise) / Double(12 - scaleDegrees.filter({ $0 > 0 }).count)
+
+        return noise
     }
 }

@@ -20,16 +20,11 @@ class ChordGuesser {
             a.getDistance(from: scaleDegreePowers) < b.getDistance(from: scaleDegreePowers)
         }
         
-        print(closestChords[0..<3])
-        
         return closestChords[0]
     }
     
     private func getPossibleChords() -> [Chord] {
         var chords = [Chord]()
-        
-        chords.append(Silence(root: -1))
-        chords.append(Noise(root: -1))
         
         for i in 0..<12 {
             chords.append(MajorChord(root: i))

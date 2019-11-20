@@ -14,8 +14,6 @@
 		C261D095237C81E500123431 /* CQT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C261D094237C81E500123431 /* CQT.cpp */; };
 		C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261D096237C82C800123431 /* ConstantQTransformTap.swift */; };
 		C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D61B223837C0300F027C5 /* AggregatingTap.swift */; };
-		C27D61B52383893200F027C5 /* Silence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D61B42383893200F027C5 /* Silence.swift */; };
-		C27D61B723838A8E00F027C5 /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D61B623838A8E00F027C5 /* Noise.swift */; };
 		C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */; };
 		C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F991237A50FF00C0B7F6 /* ViewController.swift */; };
 		C2A9F995237A50FF00C0B7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F993237A50FF00C0B7F6 /* Main.storyboard */; };
@@ -71,8 +69,6 @@
 		C261D094237C81E500123431 /* CQT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQT.cpp; sourceTree = "<group>"; };
 		C261D096237C82C800123431 /* ConstantQTransformTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantQTransformTap.swift; sourceTree = "<group>"; };
 		C27D61B223837C0300F027C5 /* AggregatingTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregatingTap.swift; sourceTree = "<group>"; };
-		C27D61B42383893200F027C5 /* Silence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Silence.swift; sourceTree = "<group>"; };
-		C27D61B623838A8E00F027C5 /* Noise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noise.swift; sourceTree = "<group>"; };
 		C2A9F98C237A50FF00C0B7F6 /* rechord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rechord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A9F991237A50FF00C0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -226,8 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				C2E3DFAA23833C6000619F40 /* Chord.swift */,
-				C27D61B42383893200F027C5 /* Silence.swift */,
-				C27D61B623838A8E00F027C5 /* Noise.swift */,
 				C2E3DFA123832FA700619F40 /* MajorChord.swift */,
 				C2E3DFA32383335C00619F40 /* MinorChord.swift */,
 			);
@@ -402,14 +396,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */,
-				C27D61B723838A8E00F027C5 /* Noise.swift in Sources */,
 				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
 				C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */,
 				C261D095237C81E500123431 /* CQT.cpp in Sources */,
 				C2E3DFA223832FA700619F40 /* MajorChord.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
 				C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */,
-				C27D61B52383893200F027C5 /* Silence.swift in Sources */,
 				C2E3DFA42383335C00619F40 /* MinorChord.swift in Sources */,
 				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,
 				C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */,
