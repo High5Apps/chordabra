@@ -23,17 +23,29 @@ class KeyboardRangeNoteTap: ConstantQTransformTap {
         let minFrequency = Float(KeyboardRangeNoteTap.getKeyboardNoteFrequencyWithIndex(i: minNote))
         let maxFrequency = Float(KeyboardRangeNoteTap.getKeyboardNoteFrequencyWithIndex(i: maxNote))
         super.init(input, minFrequency: minFrequency, maxFrequency: maxFrequency, inputBufferSize: bufferSize, bins: binCount, sampleFrequency: sampleFrequency) { (powers) in
-            var centeredScaleDegreeMaxs = [Float](zeros: notesPerOctave)
-            for (i, power) in powers.enumerated() {
-                let scaleDegree = (minNote + (i / qualityMultiplier)) % notesPerOctave
-                
-                if (i % qualityMultiplier == 1) { // 1 is the center component of the 3 frequency bins of each semitone
-                    centeredScaleDegreeMaxs[scaleDegree] = max(centeredScaleDegreeMaxs[scaleDegree], power)
+            var adjustedPowers = powers
+            var chroma = [Float](zeros: notesPerOctave)
+            for i in 0..<powers.count {
+                // 1 is the center component of the 3 frequency bins of each semitone
+                if i % qualityMultiplier != 1 {
+                    continue
                 }
+                
+                for h in 2...4 {
+                    let binMultiplier = (h % 2 == 0) ? 7 : 12
+                    if i + qualityMultiplier * binMultiplier < powers.count {
+                        let harmonicPower = powers[i] / h
+                        adjustedPowers[i + qualityMultiplier * binMultiplier] -= Float(harmonicPower)
+                        adjustedPowers[i] += Float(harmonicPower)
+                    }
+                }
+                
+                let scaleDegree = (minNote + (i / qualityMultiplier)) % notesPerOctave
+                chroma[scaleDegree] = max(chroma[scaleDegree], adjustedPowers[i])
             }
             
-            let normalizedCenteredScaleDegreeMaxs = KeyboardRangeNoteTap.normalize(input: centeredScaleDegreeMaxs)
-            analysisCompletionBlock(normalizedCenteredScaleDegreeMaxs)
+            let normalizedChroma = KeyboardRangeNoteTap.normalize(input: chroma)
+            analysisCompletionBlock(normalizedChroma)
         }
     }
     
