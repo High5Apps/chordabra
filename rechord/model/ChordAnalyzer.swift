@@ -17,15 +17,18 @@ class ChordAnalyzer {
     
     init(onChordChanged: @escaping (Chord) -> Void) {
         let chordGuesser = ChordGuesser()
-        var previousChord: Chord?
+        var oneChordAgo: Chord?
+        var twoChordsAgo: Chord?
         
         self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (chroma) in
             let chord = chordGuesser.guessChord(chroma)
-            
-            if previousChord == nil || previousChord! != chord {
-                previousChord = chord
+
+            if twoChordsAgo != oneChordAgo && oneChordAgo == chord {
                 onChordChanged(chord)
             }
+            
+            twoChordsAgo = oneChordAgo
+            oneChordAgo = chord
         }
         
         let silence = AKBooster(self.mic, gain: 0)
