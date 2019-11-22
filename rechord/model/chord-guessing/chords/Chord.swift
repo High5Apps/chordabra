@@ -14,7 +14,7 @@ class Chord: NSObject {
     
     var rootName: String {
         get {
-            ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab"][root]
+            ["A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F#", "G", "A♭"][root]
         }
     }
     

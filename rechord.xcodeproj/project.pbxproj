@@ -71,7 +71,7 @@
 		C261D094237C81E500123431 /* CQT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQT.cpp; sourceTree = "<group>"; };
 		C261D096237C82C800123431 /* ConstantQTransformTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantQTransformTap.swift; sourceTree = "<group>"; };
 		C27D61B223837C0300F027C5 /* AggregatingTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregatingTap.swift; sourceTree = "<group>"; };
-		C2A9F98C237A50FF00C0B7F6 /* rechord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rechord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A9F98C237A50FF00C0B7F6 /* Chordabra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordabra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A9F991237A50FF00C0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2A9F994237A50FF00C0B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		C2A9F98D237A50FF00C0B7F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2A9F98C237A50FF00C0B7F6 /* rechord.app */,
+				C2A9F98C237A50FF00C0B7F6 /* Chordabra.app */,
 				C2A9F9A0237A510000C0B7F6 /* rechordTests.xctest */,
 				C2A9F9AB237A510000C0B7F6 /* rechordUITests.xctest */,
 			);
@@ -261,7 +261,7 @@
 			);
 			name = rechord;
 			productName = rechord;
-			productReference = C2A9F98C237A50FF00C0B7F6 /* rechord.app */;
+			productReference = C2A9F98C237A50FF00C0B7F6 /* Chordabra.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C2A9F99F237A510000C0B7F6 /* rechordTests */ = {
@@ -603,7 +603,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chordabra;
 				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -629,7 +629,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Chordabra;
 				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationTitle("Chordabra", kern: 2)
+        
         self.chordAnalyzer = ChordAnalyzer(onChordChanged: { (chord) in
             DispatchQueue.main.async {
                self.chordLabel.text = chord.symbol
@@ -31,5 +33,20 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         self.chordAnalyzer.stop()
+    }
+    
+    func setNavigationTitle(_ title: String, kern: CGFloat) {
+        let titleLabel = UILabel()
+
+        let attributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .thin),
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.kern: kern] as [NSAttributedString.Key : Any]
+
+        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+
+        titleLabel.attributedText = attributedTitle
+        titleLabel.sizeToFit()
+        navigationItem.titleView = titleLabel
     }
 }
