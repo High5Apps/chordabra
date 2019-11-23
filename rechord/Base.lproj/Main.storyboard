@@ -32,7 +32,6 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Chordabra" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -58,7 +57,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="OHr-AN-btA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="5kV-wu-7Yz" kind="show" id="fMg-SB-vR5"/>
+                                <segue destination="DaU-CD-CAQ" kind="presentation" modalTransitionStyle="flipHorizontal" id="LOS-Wo-Rs5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,15 +65,37 @@
                         <outlet property="chordLabel" destination="plA-Nh-RAL" id="Seo-BI-LhO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="35"/>
+            <point key="canvasLocation" x="-1003" y="35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="naj-qj-3Vx">
+            <objects>
+                <navigationController id="DaU-CD-CAQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nQg-zV-8Ww">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.066666666669999999" green="0.23529411759999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5kV-wu-7Yz" kind="relationship" relationship="rootViewController" id="ShQ-PO-WcK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBg-Bx-gxr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="35"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fke-tn-knR">
             <objects>
                 <tableViewController id="5kV-wu-7Yz" customClass="SettingsViewController" customModule="Chordabra" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sv3-Pl-hpW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="df0-g3-2ZA">
@@ -107,11 +128,17 @@
                             <outlet property="delegate" destination="5kV-wu-7Yz" id="gOU-Os-0yx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="IgB-JZ-tMr"/>
+                    <navigationItem key="navigationItem" title="Settings" id="IgB-JZ-tMr">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xW8-V2-t0q">
+                            <connections>
+                                <action selector="done:" destination="5kV-wu-7Yz" id="TPk-da-hth"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6h-0y-c5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="35"/>
+            <point key="canvasLocation" x="767" y="35"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

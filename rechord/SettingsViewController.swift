@@ -21,7 +21,13 @@ class SettingsViewController: UITableViewController {
         chordTypes = appDelegate.chordTypes
     }
     
-    // MARK: - Table view data source
+    // MARK: Navigation
+    
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
+
+    // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
