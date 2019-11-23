@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationTitle("Chordabra", kern: 2)
+        setNavbarImage()
         
         self.chordAnalyzer = ChordAnalyzer()
     }
@@ -44,19 +44,10 @@ class MainViewController: UIViewController {
         self.chordAnalyzer.stop()
     }
     
-    private func setNavigationTitle(_ title: String, kern: CGFloat) {
-        let titleLabel = UILabel()
-
-        let attributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .thin),
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.kern: kern] as [NSAttributedString.Key : Any]
-
-        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
-
-        titleLabel.attributedText = attributedTitle
-        titleLabel.sizeToFit()
-        navigationItem.titleView = titleLabel
+    private func setNavbarImage() {
+        let imageView = UIImageView(image: UIImage(named: "logo-navbar"))
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
     }
     
     private func getEnabledChordTypes() -> [Chord.Type] {

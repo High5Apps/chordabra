@@ -17,9 +17,26 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationTitle("Settings", kern: 1.5)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         chordTypes = appDelegate.chordTypes
     }
+    
+        private func setNavigationTitle(_ title: String, kern: CGFloat) {
+            let titleLabel = UILabel()
+    
+            let attributes = [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .thin),
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.kern: kern] as [NSAttributedString.Key : Any]
+    
+            let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+    
+            titleLabel.attributedText = attributedTitle
+            titleLabel.sizeToFit()
+            navigationItem.titleView = titleLabel
+        }
     
     // MARK: Navigation
     
