@@ -12,30 +12,35 @@ import AudioKit
 class ChordAnalyzer {
 
     // MARK: Properties
-    var mic = AKMicrophone()!
-    var keyboardRangeNoteTap: KeyboardRangeNoteTap
+    var mic: AKMicrophone
+    var keyboardRangeNoteTap: KeyboardRangeNoteTap?
+    var chordGuesser: ChordGuesser!
     
-    init(_ chordTypes: [Chord.Type], onChordChanged: @escaping (Chord) -> Void) {
-        let chordGuesser = ChordGuesser(chordTypes)
-        var oneChordAgo: Chord?
-        var twoChordsAgo: Chord?
-        
-        self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (chroma) in
-            let chord = chordGuesser.guessChord(chroma)
-
-            if twoChordsAgo != oneChordAgo && oneChordAgo == chord {
-                onChordChanged(chord)
-            }
-            
-            twoChordsAgo = oneChordAgo
-            oneChordAgo = chord
-        }
-        
+    init() {
+        self.mic = AKMicrophone()!
         let silence = AKBooster(self.mic, gain: 0)
         AudioKit.output = silence
     }
     
-    func start() {
+    func start(chordTypes: [Chord.Type], onChordChanged: @escaping (Chord) -> Void) {
+        self.chordGuesser = ChordGuesser(chordTypes)
+        
+        var oneChordAgo: Chord?
+        var twoChordsAgo: Chord?
+
+        if self.keyboardRangeNoteTap == nil {
+            self.keyboardRangeNoteTap = KeyboardRangeNoteTap(self.mic) { (chroma) in
+                let chord = self.chordGuesser.guessChord(chroma)
+
+                if twoChordsAgo != oneChordAgo && oneChordAgo == chord {
+                    onChordChanged(chord)
+                }
+
+                twoChordsAgo = oneChordAgo
+                oneChordAgo = chord
+            }
+        }
+        
         do {
             try AudioKit.start()
         } catch {

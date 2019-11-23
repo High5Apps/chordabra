@@ -20,15 +20,16 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationTitle("Chordabra", kern: 2)
+        
+        self.chordAnalyzer = ChordAnalyzer()
     }
     
-    override func viewWillAppear(_ animated: Bool) {        
-        self.chordAnalyzer = ChordAnalyzer(getEnabledChordTypes(), onChordChanged: { (chord) in
+    override func viewWillAppear(_ animated: Bool) {
+        self.chordAnalyzer.start(chordTypes: getEnabledChordTypes(), onChordChanged: { (chord) in
             DispatchQueue.main.async {
                self.chordLabel.text = chord.symbol
             }
         })
-        self.chordAnalyzer.start()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
