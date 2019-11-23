@@ -25,6 +25,12 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.chordLabel.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         self.chordAnalyzer.start(chordTypes: getEnabledChordTypes(), onChordChanged: { (chord) in
             DispatchQueue.main.async {
                self.chordLabel.text = chord.symbol
