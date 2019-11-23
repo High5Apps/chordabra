@@ -10,6 +10,10 @@ import Foundation
 
 class DominantSeventh: Chord {
     
+    override class var friendlyName: String {
+        return "Dominant Seventh"
+    }
+    
     override var description : String {
         return "DominantSeventh(\(rootName))"
     }

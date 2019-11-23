@@ -9,18 +9,17 @@
 import Foundation
 
 class ChordGuesser {
-    lazy var chordPossibilities: [Chord] = {
-        var chords = [Chord]()
-        
-        for i in 0..<12 {
-            chords.append(MajorTriad(root: i))
-            chords.append(MinorTriad(root: i))
-            chords.append(DiminishedTriad(root: i))
-            chords.append(DominantSeventh(root: i))
+    
+    // MARK: Properties
+    var chordPossibilities = [Chord]()
+    
+    init(_ chordTypes: [Chord.Type]) {
+        for chordType in chordTypes {
+            for i in 0..<12 {
+                chordPossibilities.append(chordType.init(root: i))
+            }
         }
-        
-        return chords
-    }()
+    }
     
     func guessChord(_ chroma: [Float]) -> Chord {
         let closestChords = chordPossibilities.sorted { (a, b) -> Bool in

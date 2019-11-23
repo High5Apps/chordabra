@@ -10,6 +10,14 @@ import Foundation
 
 class MinorTriad: Chord {
     
+    override class var enabledByDefault: Bool {
+        return true
+    }
+    
+    override class var friendlyName: String {
+        return "Minor Triad"
+    }
+    
     override var description : String {
         return "MinorTriad(\(rootName))"
     }

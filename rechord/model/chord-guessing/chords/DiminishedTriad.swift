@@ -10,6 +10,10 @@ import Foundation
 
 class DiminishedTriad: Chord {
     
+    override class var friendlyName: String {
+        return "Diminished Triad"
+    }
+    
     override var description : String {
         return "DiminishedTriad(\(rootName))"
     }

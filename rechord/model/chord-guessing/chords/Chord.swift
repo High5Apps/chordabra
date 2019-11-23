@@ -24,6 +24,14 @@ class Chord: NSObject {
         }
     }
     
+    class var enabledByDefault: Bool {
+        return false
+    }
+    
+    class var friendlyName: String {
+        return "Chord"
+    }
+    
     static func == (lhs: Chord, rhs: Chord) -> Bool {
         return
             type(of: lhs) == type(of: rhs) &&

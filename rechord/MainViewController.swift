@@ -10,7 +10,7 @@ import UIKit
 import AudioKit
 import AudioKitUI
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var chordAnalyzer: ChordAnalyzer!
     
@@ -20,8 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationTitle("Chordabra", kern: 2)
-        
-        self.chordAnalyzer = ChordAnalyzer(onChordChanged: { (chord) in
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {        
+        self.chordAnalyzer = ChordAnalyzer(getEnabledChordTypes(), onChordChanged: { (chord) in
             DispatchQueue.main.async {
                self.chordLabel.text = chord.symbol
             }
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
         self.chordAnalyzer.stop()
     }
     
-    func setNavigationTitle(_ title: String, kern: CGFloat) {
+    private func setNavigationTitle(_ title: String, kern: CGFloat) {
         let titleLabel = UILabel()
 
         let attributes = [
@@ -48,5 +50,20 @@ class ViewController: UIViewController {
         titleLabel.attributedText = attributedTitle
         titleLabel.sizeToFit()
         navigationItem.titleView = titleLabel
+    }
+    
+    private func getEnabledChordTypes() -> [Chord.Type] {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let chordTypes = appDelegate.chordTypes
+        let defaults = UserDefaults.standard
+        
+        var enabledChordTypes = [Chord.Type]()
+        for chordType in chordTypes {
+            if defaults.bool(forKey: chordType.friendlyName) {
+                enabledChordTypes.append(chordType)
+            }
+        }
+        
+        return enabledChordTypes
     }
 }

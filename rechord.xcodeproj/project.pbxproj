@@ -14,8 +14,9 @@
 		C261D095237C81E500123431 /* CQT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C261D094237C81E500123431 /* CQT.cpp */; };
 		C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261D096237C82C800123431 /* ConstantQTransformTap.swift */; };
 		C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D61B223837C0300F027C5 /* AggregatingTap.swift */; };
+		C294EE0C23889A4D00FAB43E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C294EE0B23889A4D00FAB43E /* SettingsViewController.swift */; };
 		C2A9F990237A50FF00C0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */; };
-		C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F991237A50FF00C0B7F6 /* ViewController.swift */; };
+		C2A9F992237A50FF00C0B7F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9F991237A50FF00C0B7F6 /* MainViewController.swift */; };
 		C2A9F995237A50FF00C0B7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F993237A50FF00C0B7F6 /* Main.storyboard */; };
 		C2A9F997237A510000C0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F996237A510000C0B7F6 /* Assets.xcassets */; };
 		C2A9F99A237A510000C0B7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A9F998237A510000C0B7F6 /* LaunchScreen.storyboard */; };
@@ -71,9 +72,10 @@
 		C261D094237C81E500123431 /* CQT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQT.cpp; sourceTree = "<group>"; };
 		C261D096237C82C800123431 /* ConstantQTransformTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantQTransformTap.swift; sourceTree = "<group>"; };
 		C27D61B223837C0300F027C5 /* AggregatingTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregatingTap.swift; sourceTree = "<group>"; };
+		C294EE0B23889A4D00FAB43E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C2A9F98C237A50FF00C0B7F6 /* Chordabra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordabra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2A9F991237A50FF00C0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2A9F991237A50FF00C0B7F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C2A9F994237A50FF00C0B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2A9F996237A510000C0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2A9F999237A510000C0B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -164,7 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				C2A9F98F237A50FF00C0B7F6 /* AppDelegate.swift */,
-				C2A9F991237A50FF00C0B7F6 /* ViewController.swift */,
+				C2A9F991237A50FF00C0B7F6 /* MainViewController.swift */,
+				C294EE0B23889A4D00FAB43E /* SettingsViewController.swift */,
 				C2E3DF9C23832BA300619F40 /* model */,
 				C2A9F993237A50FF00C0B7F6 /* Main.storyboard */,
 				C2A9F996237A510000C0B7F6 /* Assets.xcassets */,
@@ -401,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A9F992237A50FF00C0B7F6 /* ViewController.swift in Sources */,
+				C2A9F992237A50FF00C0B7F6 /* MainViewController.swift in Sources */,
 				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
 				C2C4FA712384C87C0076D6A1 /* DiminishedTriad.swift in Sources */,
 				C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */,
@@ -409,6 +412,7 @@
 				C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
 				C2C4FA732384C9C60076D6A1 /* DominantSeventh.swift in Sources */,
+				C294EE0C23889A4D00FAB43E /* SettingsViewController.swift in Sources */,
 				C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */,
 				C2E3DFA42383335C00619F40 /* MinorTriad.swift in Sources */,
 				C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */,

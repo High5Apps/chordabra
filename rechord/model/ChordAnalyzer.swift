@@ -15,8 +15,8 @@ class ChordAnalyzer {
     var mic = AKMicrophone()!
     var keyboardRangeNoteTap: KeyboardRangeNoteTap
     
-    init(onChordChanged: @escaping (Chord) -> Void) {
-        let chordGuesser = ChordGuesser()
+    init(_ chordTypes: [Chord.Type], onChordChanged: @escaping (Chord) -> Void) {
+        let chordGuesser = ChordGuesser(chordTypes)
         var oneChordAgo: Chord?
         var twoChordsAgo: Chord?
         
