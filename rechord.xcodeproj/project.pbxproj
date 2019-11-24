@@ -614,7 +614,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.high5.chordabra;
 				PRODUCT_NAME = Chordabra;
 				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -640,7 +641,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.high5.rechord;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.high5.chordabra;
 				PRODUCT_NAME = Chordabra;
 				SWIFT_OBJC_BRIDGING_HEADER = "rechord/model/note-detection/CQTKit/CQTBridge.h";
 				SWIFT_VERSION = 5.0;
