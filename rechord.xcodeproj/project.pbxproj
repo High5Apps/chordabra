@@ -11,6 +11,8 @@
 		C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C20C6A41237DFFB7008D7E27 /* CQTBridge.mm */; };
 		C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */; };
 		C210A7A3237A7B000097BE9F /* ChordAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */; };
+		C2174176238B262200A8D4D4 /* MajorSeventh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2174175238B262200A8D4D4 /* MajorSeventh.swift */; };
+		C2174178238B267200A8D4D4 /* MinorSeventh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2174177238B267200A8D4D4 /* MinorSeventh.swift */; };
 		C261D095237C81E500123431 /* CQT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C261D094237C81E500123431 /* CQT.cpp */; };
 		C261D097237C82C800123431 /* ConstantQTransformTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261D096237C82C800123431 /* ConstantQTransformTap.swift */; };
 		C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D61B223837C0300F027C5 /* AggregatingTap.swift */; };
@@ -67,6 +69,8 @@
 		C20C6A41237DFFB7008D7E27 /* CQTBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CQTBridge.mm; sourceTree = "<group>"; };
 		C20C6A43237E1A07008D7E27 /* KeyboardRangeNoteTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRangeNoteTap.swift; sourceTree = "<group>"; };
 		C210A7A2237A7B000097BE9F /* ChordAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordAnalyzer.swift; sourceTree = "<group>"; };
+		C2174175238B262200A8D4D4 /* MajorSeventh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSeventh.swift; sourceTree = "<group>"; };
+		C2174177238B267200A8D4D4 /* MinorSeventh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorSeventh.swift; sourceTree = "<group>"; };
 		C261D092237C81E400123431 /* CQTBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTBridge.h; sourceTree = "<group>"; };
 		C261D093237C81E500123431 /* CQT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CQT.hpp; sourceTree = "<group>"; };
 		C261D094237C81E500123431 /* CQT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQT.cpp; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				C2E3DFA32383335C00619F40 /* MinorTriad.swift */,
 				C2C4FA702384C87C0076D6A1 /* DiminishedTriad.swift */,
 				C2C4FA722384C9C60076D6A1 /* DominantSeventh.swift */,
+				C2174175238B262200A8D4D4 /* MajorSeventh.swift */,
+				C2174177238B267200A8D4D4 /* MinorSeventh.swift */,
 			);
 			path = chords;
 			sourceTree = "<group>";
@@ -407,10 +413,12 @@
 				C2A9F992237A50FF00C0B7F6 /* MainViewController.swift in Sources */,
 				C20C6A44237E1A07008D7E27 /* KeyboardRangeNoteTap.swift in Sources */,
 				C2C4FA712384C87C0076D6A1 /* DiminishedTriad.swift in Sources */,
+				C2174176238B262200A8D4D4 /* MajorSeventh.swift in Sources */,
 				C2E3DFA9238334C500619F40 /* ChordGuesser.swift in Sources */,
 				C261D095237C81E500123431 /* CQT.cpp in Sources */,
 				C2E3DFA223832FA700619F40 /* MajorTriad.swift in Sources */,
 				C20C6A42237DFFB7008D7E27 /* CQTBridge.mm in Sources */,
+				C2174178238B267200A8D4D4 /* MinorSeventh.swift in Sources */,
 				C2C4FA732384C9C60076D6A1 /* DominantSeventh.swift in Sources */,
 				C294EE0C23889A4D00FAB43E /* SettingsViewController.swift in Sources */,
 				C27D61B323837C0300F027C5 /* AggregatingTap.swift in Sources */,

@@ -24,6 +24,12 @@ class Chord: NSObject {
         }
     }
     
+    var ghostNoteBias: Double {
+        get {
+            1.0
+        }
+    }
+    
     class var enabledByDefault: Bool {
         return false
     }
@@ -60,7 +66,7 @@ class Chord: NSObject {
             noise += (1 - Double(scaleDegrees[i])) * pow(Double(chroma[i]), 2)
         }
         
-        noise = sqrt(noise) / Double(12 - scaleDegrees.filter({ $0 > 0 }).count)
+        noise = sqrt(noise) / (Double(12 - scaleDegrees.filter({ $0 > 0 }).count) * ghostNoteBias)
 
         return noise
     }

@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MinorTriad.self,
         DiminishedTriad.self,
         DominantSeventh.self,
+        MajorSeventh.self,
+        MinorSeventh.self,
     ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
