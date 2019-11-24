@@ -37,19 +37,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="plA-Nh-RAL">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="1Z4-Py-Vdu">
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="plA-Nh-RAL">
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listening for Chords..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idp-JI-1zC">
+                                <rect key="frame" x="108.5" y="462" width="197" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1Z4-Py-Vdu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HEs-wM-uBw"/>
                             <constraint firstItem="plA-Nh-RAL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="a03-4C-9SJ"/>
                             <constraint firstItem="plA-Nh-RAL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aMt-nH-d6y"/>
+                            <constraint firstItem="Idp-JI-1zC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bGU-jt-Fpd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="plA-Nh-RAL" secondAttribute="trailing" constant="10" id="es7-Ah-kR2"/>
+                            <constraint firstItem="1Z4-Py-Vdu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nYt-dV-HtH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="plA-Nh-RAL" secondAttribute="bottom" constant="10" id="qsV-oQ-7hq"/>
+                            <constraint firstItem="Idp-JI-1zC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sdq-Pf-RF6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -62,7 +75,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="1Z4-Py-Vdu" id="hFF-VD-mNa"/>
                         <outlet property="chordLabel" destination="plA-Nh-RAL" id="Seo-BI-LhO"/>
+                        <outlet property="startedListeningLabel" destination="Idp-JI-1zC" id="kZE-It-vLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

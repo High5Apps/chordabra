@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     var chordAnalyzer: ChordAnalyzer!
     
     @IBOutlet weak var chordLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var startedListeningLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.chordLabel.text = ""
+        self.startedListeningLabel.isHidden = true
+        activityIndicator.startAnimating()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,14 +39,18 @@ class MainViewController: UIViewController {
         
         self.chordAnalyzer.start(chordTypes: getEnabledChordTypes(), onChordChanged: { (chord) in
             DispatchQueue.main.async {
-               self.chordLabel.text = chord.symbol
+                self.startedListeningLabel.isHidden = true
+                self.chordLabel.text = chord.symbol
             }
         })
+        
+        activityIndicator.stopAnimating()
+        startedListeningLabel.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         self.chordAnalyzer.stop()
     }
     
