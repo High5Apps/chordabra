@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             chordDefaults[chordType.friendlyName] = chordType.enabledByDefault
         }
         UserDefaults.standard.register(defaults: chordDefaults)
+        
+        // Stop the screen from dimming
+        UIApplication.shared.isIdleTimerDisabled = true
 
         return true
     }
